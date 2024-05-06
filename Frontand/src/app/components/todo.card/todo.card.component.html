@@ -1,0 +1,52 @@
+<div class="cards">
+  <div class="todo-card" *ngFor="let todo of todos">
+    <div class="todo-header">
+      <h2>{{ todo.title }}</h2>
+    </div>
+    <div class="todo-details">
+      <div class="user-info">
+        <div class="created-by">
+          <span>Creato da: </span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"
+            alt="Immagine utente"
+          />
+          <span>{{ todo.createdBy.fullName }}</span>
+        </div>
+        <div class="assigned-to">
+          <span>Assegnato a: </span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"
+            alt="Immagine utente"
+          />
+          <span>{{ todo.assignedTo?.firstName }}</span>
+        </div>
+      </div>
+      <!-- Verifica se la descrizione esiste prima di mostrarla -->
+      <div *ngIf="description" class="description">
+        <br />
+        <span>Descrizione: {{ description }}</span>
+      </div>
+      <br />
+      <div class="completion-info">
+        <div>
+          <span
+            >Completato:
+            {{ todo.completed ? "Completato" : "Non completato" }}</span
+          >
+        </div>
+        <br />
+        <div class="due-date">
+          <span
+            >Scadenza:
+            {{
+              todo.dueDate
+                ? (todo.dueDate | date : "dd/MM/yyyy")
+                : "Nessuna scadenza"
+            }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

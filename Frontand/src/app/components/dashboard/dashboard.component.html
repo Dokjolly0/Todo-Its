@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"
+          alt="User Icon"
+          class="user-icon"
+        />
+        <span class="profile-name">{{ fullName }}</span>
+      </div>
+      <ul class="navbar-nav">
+        <li>
+          <a class="btn btn-logout" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul class="sidebar-menu">
+        <li>
+          <div class="todo-item">
+            <a class="btn btn-view-todo" (click)="onClickViewTodo()"
+              >Visualizza i Todo</a
+            >
+            <div class="todo-options">
+              <span class="option-label">Visualizza completati</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="completed" #completedCheckbox />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a class="btn btn-add-todo" (click)="onClickAddTodo()"
+            >Aggiungere un Todo</a
+          >
+        </li>
+        <li>
+          <a class="btn btn-flag-completed" (click)="onClickFlagCompleted()"
+            >Flagga Completato</a
+          >
+        </li>
+        <li>
+          <a class="btn btn-flag-incomplete" (click)="onClickFlagIncomplete()"
+            >Flagga Non Completato</a
+          >
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div *ngIf="todos.length > 0">
+        <app-todo-card [todos]="todos"></app-todo-card>
+      </div>
+      <app-add-todo *ngIf="isAdd"></app-add-todo>
+    </main>
+
+    <script>
+      console.log("Script caricato");
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelector(".btn-view-todo")
+          .addEventListener("click", function () {
+            console.log("Bottone cliccato");
+          });
+      });
+    </script>
+  </body>
+</html>

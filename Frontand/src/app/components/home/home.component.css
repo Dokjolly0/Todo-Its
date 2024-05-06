@@ -1,0 +1,52 @@
+.body {
+  font-family: Arial, sans-serif;
+  background-image: url("https://img.freepik.com/free-photo/time-organization-concept-with-planner-high-angle_23-2149046750.jpg?w=996&t=st=1714822282~exp=1714822882~hmac=0d810f370b8c2cb4f5566614f7f4ae38c06497fecee0332cd9e3d0f5b483298d");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 800px;
+  width: 600px;
+  height: 250px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+.btn-container a {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.btn-container a:hover {
+  background-color: #45a049;
+}

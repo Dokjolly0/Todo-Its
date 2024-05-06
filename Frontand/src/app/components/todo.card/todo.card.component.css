@@ -1,0 +1,58 @@
+/* todo-card.component.css */
+
+.todo-card {
+  background-color: #f6ea0076;
+  border: 1px solid #f6ff00;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  width: calc(
+    45% - 20px
+  ); /* Imposta la larghezza in base al 45% del contenitore */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-header h2 {
+  margin: 0;
+}
+
+.due-date {
+  color: #000000;
+}
+
+.todo-details {
+  display: flex;
+  flex-direction: column; /* Cambiato da "space-between" a "column" */
+}
+
+.created-by,
+.assigned-to {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Aggiunto margine inferiore per distanziare le righe */
+}
+
+.created-by img,
+.assigned-to img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.created-by span,
+.assigned-to span {
+  font-weight: bold;
+}

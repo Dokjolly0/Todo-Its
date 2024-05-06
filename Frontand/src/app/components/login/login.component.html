@@ -1,0 +1,30 @@
+<div class="body">
+  <div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="username"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        required
+      />
+      <input type="submit" value="Login" [disabled]="loginForm.invalid" />
+    </form>
+    <div class="register-link">
+      <p>Non sei registrato? <a routerLink="/register">Registrati ora</a></p>
+      <p>
+        Non ricordi la password?
+        <a routerLink="/reset-password">Resetta la password</a>
+      </p>
+      <p>Torna alla <a routerLink="/">Home</a></p>
+    </div>
+  </div>
+</div>
